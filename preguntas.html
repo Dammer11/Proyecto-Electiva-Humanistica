@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Orientación | SkinCheck</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">SkinCheck</div>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="index.html#tipos">Tipos</a>
+            <a href="index.html#prevencion">Prevención</a>
+        </nav>
+    </header>
+
+    <section class="preguntas-section">
+
+        <div class="pregunta-card">
+
+            <span class="paso">Evaluación orientativa</span>
+
+            <h1 id="pregunta">
+                ¿La lesión tiene bordes irregulares?
+            </h1>
+
+            <p class="descripcion-pregunta">
+                Observa cuidadosamente la forma de la lesión o lunar y compara
+                con las características mostradas.
+            </p>
+
+            <div class="imagen-contenedor">
+                <img id="imagen" src="img/ejemplo1.jpg" alt="Ejemplo">
+            </div>
+
+            <div class="botones-respuesta">
+                <button class="btn-si" onclick="responder('si')">
+                    Sí
+                </button>
+
+                <button class="btn-no" onclick="responder('no')">
+                    No
+                </button>
+            </div>
+
+            <div class="aviso">
+                Esta evaluación es únicamente informativa y no reemplaza
+                una valoración médica profesional.
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

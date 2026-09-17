@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <head>
+    <meta charset="UTF-8">
+    <title>SkinCheck | Prevención del Cáncer de Piel</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">SkinCheck</div>
+    <nav>
+        <a href="#info">Información</a>
+        <a href="#tipos">Tipos</a>
+        <a href="#prevencion">Prevención</a>
+        <a href="preguntas.html" class="btn-nav">Realizar test</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <span class="etiqueta">Prevención y orientación temprana</span>
+        <h1>Cuida tu piel antes de que sea tarde</h1>
+        <p>
+            Esta plataforma te ayuda a conocer señales de alerta del cáncer de piel
+            mediante información clara, imágenes de referencia y un test orientativo.   
+        </p>
+
+        <div class="hero-buttons">
+            <a href="preguntas.html" class="btn-principal">Iniciar orientación</a>
+            <a href="#info" class="btn-secundario">Conocer más</a>
+        </div>
+    </div>
+
+    <div class="hero-card">
+        <h3>Autoevaluación guiada</h3>
+        <p>Responde preguntas sobre cambios, color, forma y síntomas visibles en la piel.</p>
+
+        <div class="mini-stats">
+            <div>
+                <strong>3</strong>
+                <span>Tipos principales</span>
+            </div>
+            <div>
+                <strong>ABC</strong>
+                <span>Señales de alerta</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="info" class="section">
+    <h2>¿Qué busca esta página?</h2>
+
+    <p class="section-text">
+        Esta página busca orientar al usuario sobre señales de alerta del cáncer de piel
+        mediante información sencilla, apoyo visual y una evaluación preventiva.
+    </p>
+
+    <div class="cards">
+        <div class="card card-click" onclick="abrirPopup('informacion')">
+            <h3>Información clara</h3>
+            <p>Conoce conceptos básicos sobre el cáncer de piel.</p>
+            <span>Ver más</span>
+        </div>
+
+        <div class="card card-click" onclick="abrirPopup('visual')">
+            <h3>Apoyo visual</h3>
+            <p>Observa imágenes de referencia para comparar señales.</p>
+            <span>Ver más</span>
+        </div>
+
+        <div class="card card-click" onclick="abrirPopup('orientacion')">
+            <h3>Orientación temprana</h3>
+            <p>Identifica cuándo una lesión puede requerir atención médica.</p>
+            <span>Ver más</span>
+        </div>
+    </div>
+</section>
+
+<div id="popup-info" class="popup">
+    <div class="popup-contenido">
+        <button class="cerrar-popup" onclick="cerrarPopup()">×</button>
+        <h2 id="popup-titulo"></h2>
+        <p id="popup-texto"></p>
+    </div>
+</div>
+
+<section id="tipos" class="section oscuro">
+    <h2>Tipos principales de cáncer de piel</h2>
+    <p class="section-text claro">
+        Esta plataforma se centra en los tres tipos más relevantes para el proyecto:
+        carcinoma basocelular, carcinoma espinocelular y melanoma. La información es
+        orientativa y busca ayudar al usuario a reconocer señales de alerta, sin reemplazar
+        una valoración médica profesional.
+    </p>
+
+    <div class="cards tipos-grid">
+
+        <div class="card tipo">
+            <span class="tag">Más común</span>
+            <h3>Carcinoma basocelular</h3>
+            <p>
+                Es el tipo de cáncer de piel más frecuente. Suele aparecer en zonas expuestas
+                al sol como rostro, cuello, orejas o cuero cabelludo.
+            </p>
+            <ul>
+                <li>Lesión brillante o perlada.</li>
+                <li>Herida que no cicatriza.</li>
+                <li>Mancha rosada o rojiza.</li>
+                <li>Puede sangrar o formar costra.</li>
+            </ul>
+            <p class="alerta">
+                Generalmente crece lentamente, pero debe tratarse a tiempo para evitar daños
+                en la piel cercana.
+            </p>
+        </div>
+
+        <div class="card tipo">
+            <span class="tag">Frecuente</span>
+            <h3>Carcinoma espinocelular</h3>
+            <p>
+                Es otro tipo común de cáncer de piel. Puede aparecer como una lesión más
+                áspera, gruesa o escamosa, especialmente en áreas expuestas al sol.
+            </p>
+            <ul>
+                <li>Placa roja o escamosa.</li>
+                <li>Bulto firme o endurecido.</li>
+                <li>Lesión que puede doler o sangrar.</li>
+                <li>Herida que reaparece o no sana.</li>
+            </ul>
+            <p class="alerta">
+                Puede ser más agresivo que el basocelular si no se detecta y trata de forma
+                oportuna.
+            </p>
+        </div>
+
+        <div class="card tipo destacado">
+            <span class="tag peligro">Más agresivo</span>
+            <h3>Melanoma</h3>
+            <p>
+                Aunque es menos común, es el tipo más peligroso por su capacidad de extenderse
+                a otras partes del cuerpo si no se detecta temprano.
+            </p>
+            <ul>
+                <li>Lunar con forma asimétrica.</li>
+                <li>Bordes irregulares.</li>
+                <li>Varios colores en una misma lesión.</li>
+                <li>Cambio rápido de tamaño, forma o color.</li>
+            </ul>
+            <p class="alerta">
+                Ante cambios visibles en un lunar o mancha, se recomienda consultar con un
+                dermatólogo lo antes posible.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="prevencion" class="section">
+    <h2>Recomendaciones de prevención</h2>
+
+    <div class="lista-prevencion">
+        <p>Usa protector solar diariamente.</p>
+        <p>Evita exposición prolongada al sol.</p>
+        <p>Revisa lunares o manchas nuevas.</p>
+        <p>Consulta a un dermatólogo ante cambios sospechosos.</p>
+    </div>
+
+</section>
+
+<section class="cta">
+    <h2>Comienza tu orientación</h2>
+    <p>Responde unas preguntas básicas y recibe una recomendación preventiva.</p>
+    <a href="preguntas.html" class="btn-principal">Realizar test</a>
+</section>
+
+<footer class="footer">
+
+    <div class="footer-contenido">
+
+        <h3>SkinCheck</h3>
+
+        <p class="footer-texto">
+            Proyecto académico enfocado en la orientación preventiva y
+            concientización sobre señales de alerta del cáncer de piel.
+        </p>
+
+        <div class="footer-aviso">
+
+            <h4>Advertencia médica</h4>
+
+            <p>
+                La información presentada en esta plataforma tiene únicamente
+                fines informativos, educativos y de concientización.
+            </p>
+
+            <p>
+                Este sitio no reemplaza el diagnóstico, evaluación ni criterio
+                profesional de un médico o dermatólogo especializado.
+            </p>
+
+            <p>
+                Ante cualquier síntoma, lesión sospechosa o duda relacionada
+                con su salud, se recomienda acudir a un profesional médico.
+            </p>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 SkinCheck | Proyecto académico
+        </p>
+
+    </div>
+
+</footer>
+
+<script src="script.js"></script>
+
+    <div id="popup-info" class="popup">
+        <div class="popup-contenido">
+            <button class="cerrar-popup" onclick="cerrarPopup()">×</button>
+            <h2 id="popup-titulo"></h2>
+            <p id="popup-texto"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+</body>
+</html>
