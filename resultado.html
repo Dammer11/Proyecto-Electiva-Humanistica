@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Resultado | SkinCheck</title>
@@ -9,6 +10,7 @@
 <body>
 
 <header class="header">
+
     <div class="logo">SkinCheck</div>
 
     <nav>
@@ -16,39 +18,134 @@
         <a href="index.html#tipos">Tipos</a>
         <a href="index.html#prevencion">Prevención</a>
     </nav>
+
 </header>
 
+
 <section class="resultado-section">
+
     <div class="resultado-card">
 
         <span class="paso">Resultado orientativo</span>
 
         <h1>Resultado de la evaluación</h1>
 
-        <p id="resultadoTexto" class="resultado-texto"></p>
 
-        <div class="resultado-info">
-            <h3>Recuerda</h3>
-            <p>
-                Este resultado no representa un diagnóstico médico. Su finalidad es
-                orientar y concientizar sobre posibles señales de alerta relacionadas
-                con el cáncer de piel.
-            </p>
-            <p>
-                Ante cualquier lesión sospechosa, cambio en la piel o duda sobre tu
-                salud, se recomienda acudir a un médico o dermatólogo.
-            </p>
+        <!-- RESULTADO DEL MODELO -->
+
+        <div class="resultado-modelo">
+
+            <h2>Resultado de clasificación</h2>
+
+            <div class="resultado-principal">
+
+                <p id="resultadoTexto" class="resultado-texto">
+                    Analizando resultado...
+                </p>
+
+            </div>
+
+
+            <div class="porcentajes">
+
+                <div class="porcentaje-item">
+
+                    <span>Clasificación benigna</span>
+
+                    <strong id="porcentajeBenigno">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div class="porcentaje-item">
+
+                    <span>Clasificación maligna</span>
+
+                    <strong id="porcentajeMaligno">
+                        --
+                    </strong>
+
+                </div>
+
+            </div>
+
         </div>
 
+
+        <!-- INFORMACIÓN DE LA LESIÓN -->
+
+        <div class="informacion-lesion">
+
+            <h2>Información proporcionada</h2>
+
+            <p>
+                <strong>Ubicación:</strong>
+                <span id="resultadoUbicacion">
+                    --
+                </span>
+            </p>
+
+            <p>
+                <strong>Tiempo:</strong>
+                <span id="resultadoTiempo">
+                    --
+                </span>
+            </p>
+
+            <p>
+                <strong>Cambios observados:</strong>
+                <span id="resultadoCambios">
+                    --
+                </span>
+            </p>
+
+        </div>
+
+
+        <!-- ADVERTENCIA MÉDICA -->
+
+        <div class="resultado-info">
+
+            <h3>Recuerda</h3>
+
+            <p>
+                Este resultado no representa un diagnóstico médico.
+                Su finalidad es orientar y concientizar sobre posibles
+                señales de alerta relacionadas con el cáncer de piel.
+            </p>
+
+            <p>
+                Ante cualquier lesión sospechosa, cambio en la piel
+                o duda sobre tu salud, se recomienda acudir a un médico
+                o dermatólogo.
+            </p>
+
+        </div>
+
+
+        <!-- BOTONES -->
+
         <div class="resultado-botones">
-            <a href="preguntas.html" class="btn-principal">Repetir test</a>
-            <a href="index.html" class="btn-secundario">Volver al inicio</a>
+
+            <a href="preguntas.html" class="btn-principal">
+                Repetir test
+            </a>
+
+            <a href="index.html" class="btn-secundario">
+                Volver al inicio
+            </a>
+
         </div>
 
     </div>
+
 </section>
+
 
 <script src="script.js"></script>
 
 </body>
+
 </html>

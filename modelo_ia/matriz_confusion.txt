@@ -1,0 +1,6 @@
+MATRIZ DE CONFUSIÓN - SKINCHECK
+
+                Predicción
+                     benign  malignant
+Real     benign        465         35
+Real  malignant         81        419

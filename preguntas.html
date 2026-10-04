@@ -2,7 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Orientación | SkinCheck</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis | SkinCheck</title>
 
     <link rel="stylesheet" href="estilos.css">
 </head>
@@ -19,43 +20,390 @@
         </nav>
     </header>
 
-    <section class="preguntas-section">
 
-        <div class="pregunta-card">
+    <main class="analisis-section">
+
+        <div class="analisis-header">
 
             <span class="paso">Evaluación orientativa</span>
 
-            <h1 id="pregunta">
-                ¿La lesión tiene bordes irregulares?
-            </h1>
+            <h1>Análisis de una lesión cutánea</h1>
 
-            <p class="descripcion-pregunta">
-                Observa cuidadosamente la forma de la lesión o lunar y compara
-                con las características mostradas.
+            <p>
+                Sube una imagen de la lesión y proporciona algunos datos
+                que permitan complementar la evaluación orientativa.
             </p>
-
-            <div class="imagen-contenedor">
-                <img id="imagen" src="img/ejemplo1.jpg" alt="Ejemplo">
-            </div>
-
-            <div class="botones-respuesta">
-                <button class="btn-si" onclick="responder('si')">
-                    Sí
-                </button>
-
-                <button class="btn-no" onclick="responder('no')">
-                    No
-                </button>
-            </div>
-
-            <div class="aviso">
-                Esta evaluación es únicamente informativa y no reemplaza
-                una valoración médica profesional.
-            </div>
 
         </div>
 
-    </section>
+
+        <div class="analisis-contenedor">
+
+
+            <!-- =========================================
+                 PASO 1 - CARGAR IMAGEN
+            ========================================== -->
+
+            <section class="analisis-card">
+
+                <div class="numero-paso">
+                    01
+                </div>
+
+                <div class="titulo-paso">
+                    <h2>Sube una imagen</h2>
+
+                    <p>
+                        Selecciona una fotografía clara de la lesión
+                        que deseas analizar.
+                    </p>
+                </div>
+
+
+                <div class="zona-carga" id="zonaCarga">
+
+                    <div class="icono-carga">
+                        ↑
+                    </div>
+
+                    <h3>Selecciona una imagen</h3>
+
+                    <p>
+                        Puedes hacer clic aquí o seleccionar un archivo
+                        desde tu computador.
+                    </p>
+
+                    <span class="formatos">
+                        JPG, JPEG o PNG
+                    </span>
+
+                    <input
+                        type="file"
+                        id="imagenInput"
+                        accept="image/png, image/jpeg, image/jpg"
+                        hidden
+                    >
+
+                    <button
+                        type="button"
+                        class="btn-principal"
+                        id="btnSeleccionar"
+                    >
+                        Seleccionar imagen
+                    </button>
+
+                </div>
+
+
+                <!-- Vista previa -->
+
+                <div
+                    class="vista-previa"
+                    id="vistaPrevia"
+                    style="display: none;"
+                >
+
+                    <img
+                        id="imagenSeleccionada"
+                        src=""
+                        alt="Vista previa de la lesión"
+                    >
+
+                    <div class="informacion-imagen">
+
+                        <h3>Imagen seleccionada</h3>
+
+                        <p id="nombreImagen"></p>
+
+                        <button
+                            type="button"
+                            class="btn-secundario"
+                            id="btnCambiarImagen"
+                        >
+                            Cambiar imagen
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================================
+                 PASO 2 - INFORMACIÓN DE LA LESIÓN
+            ========================================== -->
+
+            <section class="analisis-card">
+
+                <div class="numero-paso">
+                    02
+                </div>
+
+                <div class="titulo-paso">
+
+                    <h2>Información de la lesión</h2>
+
+                    <p>
+                        Responde estas preguntas para complementar
+                        el análisis de forma orientativa.
+                    </p>
+
+                </div>
+
+
+                <!-- Ubicación -->
+
+                <div class="campo-analisis">
+
+                    <label for="ubicacion">
+                        ¿Dónde se encuentra la lesión?
+                    </label>
+
+                    <select id="ubicacion">
+
+                        <option value="">
+                            Selecciona una opción
+                        </option>
+
+                        <option value="cara">
+                            Cara
+                        </option>
+
+                        <option value="cuello">
+                            Cuello
+                        </option>
+
+                        <option value="pecho">
+                            Pecho
+                        </option>
+
+                        <option value="espalda">
+                            Espalda
+                        </option>
+
+                        <option value="brazos">
+                            Brazos
+                        </option>
+
+                        <option value="manos">
+                            Manos
+                        </option>
+
+                        <option value="piernas">
+                            Piernas
+                        </option>
+
+                        <option value="pies">
+                            Pies
+                        </option>
+
+                        <option value="otra">
+                            Otra zona
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- Tiempo -->
+
+                <div class="campo-analisis">
+
+                    <label for="tiempo">
+                        ¿Hace cuánto notaste la lesión?
+                    </label>
+
+                    <select id="tiempo">
+
+                        <option value="">
+                            Selecciona una opción
+                        </option>
+
+                        <option value="menos-mes">
+                            Menos de 1 mes
+                        </option>
+
+                        <option value="uno-seis">
+                            Entre 1 y 6 meses
+                        </option>
+
+                        <option value="seis-doce">
+                            Entre 6 meses y 1 año
+                        </option>
+
+                        <option value="mas-ano">
+                            Más de 1 año
+                        </option>
+
+                        <option value="no-se">
+                            No estoy seguro
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- Cambios -->
+
+                <div class="campo-analisis">
+
+                    <label>
+                        ¿Has notado cambios recientes?
+                    </label>
+
+
+                    <div class="opciones-checkbox">
+
+                        <label class="opcion-checkbox">
+                            <input
+                                type="checkbox"
+                                name="cambios"
+                                value="tamano"
+                            >
+
+                            <span>
+                                Cambio de tamaño
+                            </span>
+                        </label>
+
+
+                        <label class="opcion-checkbox">
+                            <input
+                                type="checkbox"
+                                name="cambios"
+                                value="color"
+                            >
+
+                            <span>
+                                Cambio de color
+                            </span>
+                        </label>
+
+
+                        <label class="opcion-checkbox">
+                            <input
+                                type="checkbox"
+                                name="cambios"
+                                value="forma"
+                            >
+
+                            <span>
+                                Cambio de forma
+                            </span>
+                        </label>
+
+
+                        <label class="opcion-checkbox">
+                            <input
+                                type="checkbox"
+                                name="cambios"
+                                value="sangrado"
+                            >
+
+                            <span>
+                                Sangrado
+                            </span>
+                        </label>
+
+
+                        <label class="opcion-checkbox">
+                            <input
+                                type="checkbox"
+                                name="cambios"
+                                value="picazon"
+                            >
+
+                            <span>
+                                Picazón
+                            </span>
+                        </label>
+
+
+                        <label class="opcion-checkbox">
+                            <input
+                                type="checkbox"
+                                name="cambios"
+                                value="dolor"
+                            >
+
+                            <span>
+                                Dolor
+                            </span>
+                        </label>
+
+
+                        <label class="opcion-checkbox">
+                            <input
+                                type="checkbox"
+                                name="cambios"
+                                value="ninguno"
+                            >
+
+                            <span>
+                                Ninguno
+                            </span>
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================================
+                 PASO 3 - ANALIZAR
+            ========================================== -->
+
+            <section class="analisis-card analisis-final">
+
+                <div class="numero-paso">
+                    03
+                </div>
+
+                <div class="titulo-paso">
+
+                    <h2>Realizar análisis</h2>
+
+                    <p>
+                        Cuando hayas seleccionado la imagen y completado
+                        la información, puedes iniciar la evaluación.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="btn-analizar"
+                    id="btnAnalizar"
+                >
+                    Analizar lesión
+                </button>
+
+
+                <p class="aviso-analisis">
+
+                    Esta herramienta tiene fines informativos y educativos.
+                    El resultado no constituye un diagnóstico médico y no
+                    reemplaza la valoración de un profesional de la salud.
+
+                </p>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
 
     <script src="script.js"></script>
 

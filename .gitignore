@@ -1,0 +1,21 @@
+# Entorno virtual de Python
+.venv/
+venv/
+env/
+
+# Dataset de SkinCheck
+modelo_ia/dataset/
+
+# Archivos temporales de Python
+__pycache__/
+*.pyc
+
+# Archivos de Jupyter
+.ipynb_checkpoints/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
