@@ -7,46 +7,22 @@ import numpy as np
 from PIL import Image
 from pathlib import Path
 
-
-# ============================================================
-# CONFIGURACIÓN
-# ============================================================
-
 app = Flask(__name__)
-
 CORS(app)
 
-
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 MODELO_PATH = BASE_DIR / "modelo_skincheck.keras"
-
 IMG_SIZE = (224, 224)
 
-
-# ============================================================
-# CARGAR MODELO
-# ============================================================
-
 print("Cargando modelo SkinCheck...")
-
 modelo = tf.keras.models.load_model(MODELO_PATH)
-
 print("Modelo cargado correctamente.")
 
-
-# ============================================================
-# RUTA PRINCIPAL
-# ============================================================
 
 @app.route("/")
 def inicio():
     return "Backend de SkinCheck funcionando correctamente."
 
-
-# ============================================================
-# PREDICCIÓN
-# ============================================================
 
 @app.route("/predict", methods=["POST"])
 def predecir():
@@ -64,44 +40,16 @@ def predecir():
         }), 400
 
     try:
-
-        # ----------------------------------------------------
-        # Abrir imagen
-        # ----------------------------------------------------
-
         imagen = Image.open(archivo).convert("RGB")
-
-        # ----------------------------------------------------
-        # Redimensionar
-        # ----------------------------------------------------
-
         imagen = imagen.resize(IMG_SIZE)
 
-        # ----------------------------------------------------
-        # Convertir a array
-        # ----------------------------------------------------
-
-        imagen_array = np.array(imagen)
-
-        # ----------------------------------------------------
-        # Preparar imagen para MobileNetV2
-        # ----------------------------------------------------
-
-        imagen_array = imagen_array.astype("float32")
+        imagen_array = np.array(imagen).astype("float32")
 
         imagen_array = tf.keras.applications.mobilenet_v2.preprocess_input(
             imagen_array
         )
 
-        # Agregar dimensión del lote
-        imagen_array = np.expand_dims(
-            imagen_array,
-            axis=0
-        )
-
-        # ----------------------------------------------------
-        # Realizar predicción
-        # ----------------------------------------------------
+        imagen_array = np.expand_dims(imagen_array, axis=0)
 
         prediccion = modelo.predict(
             imagen_array,
@@ -109,21 +57,12 @@ def predecir():
         )
 
         puntuacion_maligna = float(prediccion[0][0])
-
         puntuacion_benigna = 1 - puntuacion_maligna
-
-        # ----------------------------------------------------
-        # Determinar clase
-        # ----------------------------------------------------
 
         if puntuacion_maligna >= 0.5:
             resultado = "malignant"
         else:
             resultado = "benign"
-
-        # ----------------------------------------------------
-        # Respuesta
-        # ----------------------------------------------------
 
         return jsonify({
             "resultado": resultado,
@@ -140,11 +79,8 @@ def predecir():
         }), 500
 
 
-# ============================================================
-# INICIAR SERVIDOR
-# ============================================================
-
 if __name__ == "__main__":
     app.run(
-        debug=True
+        host="0.0.0.0",
+        port=5000
     )
