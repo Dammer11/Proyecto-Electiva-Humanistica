@@ -255,7 +255,7 @@ if (btnAnalizar) {
 
             // Enviar información a Flask
             const respuesta = await fetch(
-                "https://skincheck-zmd0.onrender.com/predict",
+                "https://skincheck-795092468559.us-central1.run.app/predict",
                 {
                     method: "POST",
                     body: datos
